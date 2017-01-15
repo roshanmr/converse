@@ -1,0 +1,243 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="Turning web forms into conversations">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="container">
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="form-outer" class="panel panel-default">
+                    <div class="panel-body">
+                      <form id="conversational" action="thanks.html" method="POST">
+                        <h2>Let's get to know you!</h2>
+
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                          <input cf-questions="Hi there! Before we start the feedback survey, can you please tell me your name?" type="name" class="form-control" name="name" id="name" />
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="start-feedback">Can we start?</label>
+                          <label>
+                            <input cf-questions="Great to meet you, {previous-answer}! I'm an automated web form, Are you ready to get started?|Awesome, {previous-answer}! Can we start now? It won't take long" type="radio" name="start-feedback" value="yes" />
+                            Yes
+                          </label>
+
+                        </div>
+
+                        <div class="form-group">
+                          <label for="tech-feedback">Technology Competency</label>
+                          <label>
+                          <input cf-questions="Awesome! You worked with our team on a project recently. How would you rate the technical competency of our team?" type="radio" name="tech-feedback" value="great" />
+                            Great!
+                          </label>
+                          <label>
+                            <input type="radio" name="tech-feedback" value="sufficient" />
+                            Good / Sufficient
+                          </label>
+
+                          <label>
+                            <input type="radio" name="tech-feedback" value="improve" />
+                            Could have been better
+                          </label>
+
+                          <label>
+                            <input type="radio" name="tech-feedback" value="bad" />
+                            Bad experience
+                          </label>
+
+                          <label for="sufficient-feedback">Technology Feedback</label>
+                          <input cf-display-if="tech-feedback == 'sufficient'" cf-questions="Noted. Do you have any feedback for the Tech Team?" type="text" name="sufficient-feedback" />
+
+
+                          <label for="improve-feedback">Technology Feedback</label>
+                          <input cf-display-if="tech-feedback == 'improve'" cf-questions="Can you specify what could have been improved?" type="text" name="improve-feedback" />
+
+                          <label for="bad-feedback">Technology Feedback</label>
+                          <input cf-display-if="tech-feedback == 'bad'" cf-questions="Sorry to hear that! Please tell me what went wrong. We take your feedback seriously" type="text" name="bad-feedback" />
+
+
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                          <label for="communication-feedback">Communication</label>
+                          <label>
+                            <input cf-questions="I will pass on that feedback to the team. Now I want to ask you about communication. Were you satisfied with the way our team handled communications with you?" type="radio" name="communication-feedback" value="great" />
+                            Great!
+                          </label>
+                          <label>
+                            <input type="radio" name="communication-feedback" value="sufficient" />
+                            Good / Sufficient
+                          </label>
+
+                          <label>
+                            <input type="radio" name="communication-feedback" value="improve" />
+                            Could have been better
+                          </label>
+
+                          <label>
+                            <input type="radio" name="communication-feedback" value="bad" />
+                            Bad experience
+                          </label>
+
+                          <label for="sufficient-communication">communication Feedback</label>
+                          <input cf-display-if="communication-feedback == 'sufficient'" cf-questions="Noted. Would you like to give any feedback to the team?" type="text" name="sufficient-communication" />
+
+
+                          <label for="improve-communication">communication Feedback</label>
+                          <input cf-display-if="communication-feedback == 'improve'" cf-questions="Can you specify what could have been improved?" type="text" name="improve-communication" />
+
+                          <label for="bad-communication">communication Feedback</label>
+                          <input cf-display-if="communication-feedback == 'bad'" cf-questions="Sorry to hear that! Are there any specific example you would like to tell us so that we can take immediate action? " type="text" name="bad-communication" />
+
+
+
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="general-feedback">Communication</label>
+                          <label>
+                            <input cf-questions="Thank you very much for answering all the questions! For the last one, do you have any generic feedback for the team?" type="text" name="general-feedback" />
+                            Great!
+                          </label>
+
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input cf-questions="Please give me your e-mail ID. This is for any further communication we might need to do with you later." type="email" class="form-control" name="email" id="your-email" />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="phone">Finally, your phone number</label>
+                          <input cf-questions="and your phone number" type="text" class="form-control" name="phone" id="phone" />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="confirmation">Submit the form?</label>
+                          <select cf-questions="That's it! Shall I send this to our team?" name="confirmation" id="confirmation" class="form-control">
+                            <option selected="true">Yes</option>
+                            <option >No</option>
+                          </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 text-center">
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="container">
+
+        </footer>
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+
+
+        <script type="text/javascript" src="../dist/conversational-form.min.js" ></script>
+
+
+        <script>
+          (function(){
+
+            setTimeout(function() {
+              $(document).on("click", "#toggle-conversation", function(){
+
+                $(this).addClass("disabled");
+                var form = $(".conversational-form");
+                if (form.hasClass("conversational-form--show")) {
+                  $(this).removeClass("active");
+                  $(this).text("Let's Chat");
+                  $(".conversational-form").removeClass("conversational-form--show");
+                } else {
+                  $(this).addClass("active");
+                  $(this).text("Give me the form");
+                  $(".conversational-form").addClass("conversational-form--show");
+                }
+                $(this).removeClass("disabled");
+
+              }, 200);
+
+
+              if(!window.ConversationalForm){
+                window.ConversationalForm = new cf.ConversationalForm({
+                  formEl: document.getElementById("conversational"),
+                  context: document.getElementById("form-outer"),
+                  userImage: "img/human.png",
+                  robotImage: "img/robot.png"
+                });
+              }
+
+            });
+
+
+          })();
+
+
+
+          function startDictation() {
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+              var recognition = new webkitSpeechRecognition();
+              recognition.continuous = false;
+              recognition.interimResults = false;
+              recognition.lang = "en-US";
+              recognition.start();
+
+              recognition.onresult = function(e) {
+                document.activeElement.value
+                = e.results[0][0].transcript;
+                recognition.stop();
+              };
+
+              recognition.onerror = function(e) {
+                recognition.stop();
+              }
+
+            }
+          }
+
+        </script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+      </body>
+      </html>

@@ -1,0 +1,140 @@
+/*html, body, .container {
+  height: 100%;
+  position: relative;
+}
+
+.row.valign {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}*/
+
+html {
+  display: block;
+  height: 100%;
+}
+body {
+  background: rgb(63,76,107);
+background: -moz-linear-gradient(-45deg,  rgba(63,76,107,1) 0%, rgba(111,102,173,1) 100%);
+background: -webkit-linear-gradient(-45deg,  rgba(63,76,107,1) 0%,rgba(111,102,173,1) 100%);
+background: linear-gradient(135deg,  rgba(63,76,107,1) 0%,rgba(111,102,173,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#6f66ad',GradientType=1 );
+display: block;
+height: 100%;
+padding-top: 3em;
+box-sizing: border-box;
+
+}
+#conversational-form {
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  margin-top: 3px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.panel {
+  box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#toggle-conversation {
+  margin-bottom: 30px;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  padding: 13px 25px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#toggle-conversation:hover, #toggle-conversation.active, #toggle-conversation.active:hover {
+  border-color: #000;
+}
+
+.panel, .btn {
+  border-radius: 20px;
+}
+
+.thanks-container {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.robot thumb {
+  background: none !important;
+  background-size: cover;
+}
+
+.robot thumb:after {
+    background: url(../img/robot.png) !important;
+    background-size: cover !important;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    top: 0;
+    content: '';
+    z-index: 10;
+    background-position: 0;
+    /* padding: 1px; */
+    box-sizing: content-box;
+}
+
+.panel-body {
+  height: 80vh;
+}
+
+.panel-body form {
+  opacity: 0;
+}
+
+cf-chat {
+    background: rgb(255,249,234);
+background: -moz-linear-gradient(top,  rgba(255,249,234,1) 0%, rgba(234,227,213,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(255,249,234,1) 0%,rgba(234,227,213,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,249,234,1) 0%,rgba(234,227,213,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff9ea', endColorstr='#eae3d5',GradientType=0 );
+
+
+
+    padding: 20px;
+}
+
+
+#conversational-form cf-chat:before {
+ background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,249,234,0) 100%);
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,249,234,0) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,249,234,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00fff9ea',GradientType=0 );
+
+
+  top: 20px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+}
+
+cf-chat-response text {
+  background: #fff;
+  color: #444;
+}
+
+cf-chat-response.show text[value-added] {
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+cf-input-control-elements {
+    padding: 10px 20px;
+}
